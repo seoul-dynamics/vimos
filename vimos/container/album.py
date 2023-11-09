@@ -1,5 +1,7 @@
 from typing import List, Union
 import multiprocessing as mp
+from concurrent.futures import ThreadPoolExecutor
+
 import numpy as np
 
 from vimos.base import Container, Editor
@@ -31,6 +33,9 @@ class Album(Container):
     def __getitem__(self, index):
         return self.data[index]
 
-    def _prepare_data(self, input_source: Union[List[str], List[np.ndarray]]):
-        data = [Photo(src) for src in input_source]
+    def _prepare_data(
+        self, input_source: Union[List[str], List[np.ndarray]], num_workers: int = 4
+    ):
+        with ThreadPoolExecutor(max_workers=num_workers) as executor:
+            data = list(executor.map(lambda src: Photo(src), input_source))
         return data
