@@ -1,6 +1,6 @@
 import os.path as osp
 
-from vimos.pose.model import PoseModel
+from vimos.model.pose import PoseModel
 
 
 POSE_MODEL = {
@@ -47,7 +47,7 @@ POSE_MODEL = {
 }
 
 
-def build_model(model_name, model_complexity=0, device="cpu"):
+def build_pose_model(model_name, model_complexity=0, device="cpu"):
     assert model_name in POSE_MODEL.keys(), f"Model {model_name} not found"
     assert (
         POSE_MODEL[model_name]["max_complexity"] >= model_complexity

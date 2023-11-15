@@ -1,4 +1,3 @@
-import torch
 from mmpose.apis import init_model, inference_topdown
 
 from vimos.base import Model

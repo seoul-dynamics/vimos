@@ -38,14 +38,14 @@ class Modifier(abc.ABC):
 
 class Model(abc.ABC, mp.Process):
     def __init__(self):
-        self.input_queue = None
-        self.output_queue = None
+        self.queue_in = None
+        self.queue_out = None
 
-    def connect(self, input_queue, output_queue):
-        self.input_queue = input_queue
-        self.output_queue = output_queue
+    def connect(self, queue_in, queue_out):
+        self.queue_in = queue_in
+        self.queue_out = queue_out
 
-    def run(self):
+    def start(self):
         while True:
             if not self.queue_in.empty():
                 data = self.queue_in.get()
@@ -54,10 +54,23 @@ class Model(abc.ABC, mp.Process):
                     break
 
                 output = self.process(data)
-                self.output_queue.put(output)
+                self.queue_out.put(output)
 
     def process(self, input_data: Container):
         raise NotImplementedError
+
+
+class Metric(abc.ABC):
+    similar_small = None
+
+    def __call__(self, ref_skeleton, query_skeleton):
+        pass
+
+    def _evaluate(self, ref_skeleton, query_skeleton):
+        pass
+
+    def _normalize(self, ref_vector, query_vector):
+        pass
 
 
 class Task(abc.ABC):
