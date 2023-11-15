@@ -18,8 +18,11 @@ class Skeleton(Container):
         data = np.concatenate([keypoints, keypoint_scores, keypoints_visible], axis=1)
         return data
 
-    def get_keypoints(self):
+    def get_vertices(self):
         return self.data[:, : self.dimension]
+
+    def get_weights(self):
+        return self.data[:, -2]
 
     def get_keypoint_scores(self):
         return self.data[:, -2]

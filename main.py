@@ -5,7 +5,7 @@ from vimos.container import Photo, Album
 # from vimos.editor import HumanCropEditor
 # from vimos.modifier import SelectVertexModifier, WeightEdgeModifier
 from vimos.model import build_pose_model
-from vimos.task import SimilarityRankingTask, TaskConfig
+from vimos.task import SimilarityRankingTask, PoseMatchingTask, TaskConfig
 from vimos.utils import Pipeline
 
 
@@ -30,17 +30,20 @@ if __name__ == "__main__":
         k=3,
         similar_front=True,
     )
-    task.run()
+
+    reference = Photo("sample/pose1.png")
+    task = PoseMatchingTask(task_config, reference=reference, threshold=0.5)
+
+    task.start()
 
     cap = cv2.VideoCapture(0)
     while True:
         ret, frame = cap.read()
-        frame = Photo(frame)
+        # frame = Photo(frame)
+        frame = Photo("sample/pose1.png")
 
-        task.process(frame)
-        scores, indexes = task.get_result()
-
-        print(indexes)
+        output = task.process(frame)
+        print(output)
 
         if cv2.waitKey(1) == 27:
             break

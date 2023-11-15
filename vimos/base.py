@@ -36,8 +36,10 @@ class Modifier(abc.ABC):
     pass
 
 
-class Model(abc.ABC, mp.Process):
+class Model(abc.ABC):
     def __init__(self):
+        super().__init__()
+
         self.queue_in = None
         self.queue_out = None
 
@@ -45,7 +47,7 @@ class Model(abc.ABC, mp.Process):
         self.queue_in = queue_in
         self.queue_out = queue_out
 
-    def start(self):
+    def run(self):
         while True:
             if not self.queue_in.empty():
                 data = self.queue_in.get()

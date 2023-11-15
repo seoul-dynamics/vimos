@@ -2,6 +2,7 @@ import multiprocessing as mp
 
 from vimos.base import Task
 from vimos.container import Photo, Album
+from vimos.metric import build_metric
 
 
 class SimilarityRankingTask(Task):
@@ -16,13 +17,17 @@ class SimilarityRankingTask(Task):
 
         model = self.task_config.model
         model.connect(self.queue_in, self.queue_out)
-        model.start()
+
+        mp.Process(target=model.run).start()
 
         if type(self.reference) is Photo:
             self.reference = Album(self.reference)
 
         self.queue_in.put(self.reference)
         self.reference = self.queue_out.get()
+
+        if type(self.task_config.metric) is str:
+            self.task_config.metric = build_metric(self.task_config.metric)
 
     def process(self, input_data):
         self.queue_in.put(input_data)
@@ -33,4 +38,6 @@ class SimilarityRankingTask(Task):
 
         reverse = self.similar_front ^ self.task_config.metric.similar_small
         output = sorted(output, key=lambda x: x[0], reverse=reverse)[: self.k]
-        return output
+
+        scores, indexes = zip(*output)
+        return indexes, scores

@@ -1,7 +1,9 @@
+from typing import Union
+
 from mmpose.apis import init_model, inference_topdown
 
 from vimos.base import Model
-from vimos.container import Photo, Skeleton
+from vimos.container import Photo, Album, Skeleton
 
 
 class PoseModel(Model):
@@ -10,9 +12,15 @@ class PoseModel(Model):
         self.device = device
         self.dimension = dimension
 
-    def process(self, input_image: Photo):
-        output = inference_topdown(self.model, input_image.data)
-        output = [Skeleton(output[i].pred_instances) for i in range(len(output))]
+    def process(self, input_image: Union[Photo, Album]):
+        input_images = (
+            [input_image.data]
+            if type(input_image) is Photo
+            else [image.data for image in input_image.data]
+        )
+
+        output = [inference_topdown(self.model, image) for image in input_images]
+        output = [Skeleton(output[i][0].pred_instances) for i in range(len(output))]
 
         if len(output) == 1:
             output = output[0]
