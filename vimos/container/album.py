@@ -1,4 +1,4 @@
-from typing import List, Union
+from typing import List, Union, Callable
 import multiprocessing as mp
 from concurrent.futures import ThreadPoolExecutor
 
@@ -9,14 +9,10 @@ from vimos.container import Photo
 
 
 class Album(Container):
-    def apply(self, editor: Editor, inplace: bool = False):
+    def apply(self, editor_func: Callable):
         with mp.Pool() as pool:
-            if inplace:
-                self.data = pool.map(editor, self.data)
-                return self
-            else:
-                data = pool.map(editor, self.data.copy())
-                return Album(data)
+            self.data = pool.map(editor_func, self.data)
+            return self
 
     def save(self, path: str):
         self.data = np.stack([photo.data for photo in self.data])
