@@ -126,4 +126,10 @@ class BodyPoseEstimator(object):
             y1 = min(y+h+y_margin, orig_img.shape[0])
             current_bbox[i] = np.array((x0, y0, x1-x0, y1-y0)).astype(np.int32)
 
+        #Sort the bbox using bbox size 
+        # (to make the order as consistent as possible without tracking)
+        bbox_size =  [ (x[2] * x[3]) for x in current_bbox]
+        idx_big2small = np.argsort(bbox_size)[::-1]
+        current_bbox = [ current_bbox[i] for i in idx_big2small ]
+
         return current_poses, current_bbox

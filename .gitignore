@@ -159,11 +159,5 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
-sample_data
-lesson_usr.zip
-test.mov
-src
-usr
-lesson
-scripts
-extra_data
+model/mesh/detectors/*
+model/mesh/extra_data

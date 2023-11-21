@@ -5,7 +5,7 @@ import torch
 import numpy as np
 import cv2
 import argparse
-from model.mesh_model import FrankMocap
+from model.mesh.mesh_model import FrankMocap
 
 
 def load_mesh(input_path):
