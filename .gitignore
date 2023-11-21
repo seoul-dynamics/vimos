@@ -159,5 +159,5 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
-model/mesh/detectors/*
-model/mesh/extra_data
+vimos/model/mesh/detectors/*
+vimos/model/mesh/extra_data/*
