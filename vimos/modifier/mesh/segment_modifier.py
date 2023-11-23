@@ -7,7 +7,7 @@ from vimos.base import Modifier
 
 class SegmentModifier(Modifier):
     def load_smpl(self):
-        smpl_dir = './extra_data'
+        smpl_dir = './vimos/model/mesh/extra_data'
         smplModelPath = smpl_dir + '/smpl.pkl'
         smpl = SMPL(smplModelPath, batch_size=1, create_transl=False)
         

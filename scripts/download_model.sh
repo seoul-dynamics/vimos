@@ -4,8 +4,8 @@
 
 set -ex
 
-mkdir -p extra_data/body_module
-cd extra_data/body_module
+mkdir -p vimos/model/mesh/extra_data/body_module
+cd vimos/model/mesh/extra_data/body_module
 
 echo "Downloading extra data from SPIN"
 wget http://visiondata.cis.upenn.edu/spin/data.tar.gz && tar -xvf data.tar.gz && rm data.tar.gz
