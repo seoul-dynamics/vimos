@@ -16,7 +16,7 @@ import mocap_utils.geometry_utils as gu
 
 class BodyMocap(object):
     def __init__(self, device=torch.device('cuda'), use_smplx=False):
-        smpl_dir = './extra_data/' 
+        smpl_dir = './vimos/model/mesh/extra_data/' 
         regressor_checkpoint ='./extra_data/body_module/pretrained_weights/2020_05_31-00_50_43-best-51.749683916568756.pt'
         self.device = device#torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
         # Load parametric model (SMPLX or SMPL)

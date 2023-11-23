@@ -1,1 +1,1 @@
-from vimos.editor.pose import HumanCropEditor, ResizeEditor
+from vimos.editor import HumanCropEditor, ResizeEditor

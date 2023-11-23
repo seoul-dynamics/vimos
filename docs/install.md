@@ -18,7 +18,7 @@ pip install opencv-python
     - We use SMPL and SMPL-X model as 3D pose estimation output. You have to download them from the original website.
     - Download SMPL Model (Neutral model: basicModel_neutral_lbs_10_207_0_v1.0.0.pkl):    
         - Download in the original [website](http://smplify.is.tue.mpg.de/login). You need to register to download the SMPL data.
-        - Put the file in: ./extra_data/smpl/basicModel_neutral_lbs_10_207_0_v1.0.0.pkl
+        - Put the file as: './vimos/model/mesh/extra_data/smpl.pkl'
 
 3. Download Models
 ```shell
