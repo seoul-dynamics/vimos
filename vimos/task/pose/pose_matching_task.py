@@ -13,7 +13,8 @@ class PoseMatchingTask(Task):
         self.threshold = threshold
 
     def start(self, num_process=1):
-        self.queue_in, self.queue_out = mp.Queue(), mp.Queue()
+        manager = mp.Manager()
+        self.queue_in, self.queue_out = manager.Queue(), manager.Queue()
 
         model = self.task_config.model
         for _ in range(num_process):
