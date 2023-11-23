@@ -14,7 +14,7 @@ class EuclideanMetric(Metric):
         query_vertices = query_skeleton.get_vertices()
 
         ref_vertices, query_vertices = self._normalize(ref_vertices, query_vertices)
-        weights = ref_skeleton.get_weights()
+        weights = query_skeleton.get_weights()
 
         total_score = 0
         for ref_vertex, query_vertex, weight in zip(
