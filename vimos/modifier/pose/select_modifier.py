@@ -1,5 +1,4 @@
 import numpy as np
-from mmdet.apis import init_detector, inference_detector
 
 from vimos.base import Modifier
 from vimos.utils import COCO_N2I

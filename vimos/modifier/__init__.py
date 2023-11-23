@@ -1,1 +1,1 @@
-from vimos.modifier.pose import SelectModifier
+from vimos.modifier.pose import SelectModifier, WeightModifier
