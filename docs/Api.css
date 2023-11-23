@@ -35,3 +35,9 @@ body, h1, h2, .function {
     color: #666;
   }
   
+  .code-block {
+    background-color: #f4f4f4;
+    border-left: 4px solid #ddd;
+    padding: 10px;
+    font-family: monospace;
+}

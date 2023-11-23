@@ -2,6 +2,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/atom-one-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script> 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Editor</title>
@@ -12,15 +15,39 @@
     <h1>Editor</h1>
     </div>
     <div class="container">
+    <h2>Editor  </h2>
+
     <div class="function">
       <div class="name">ResizeEditor</div>
-      <div class="description">Resize given input</div>
+      <div class="description">Resize image to given width and height</div>
     </div>
     <div class="function">
-        <div class="name">HumanCropEditor</div>
-        <div class="description">Crop human from given input</div>
-      </div>
+      <div class="name">HumanCropEditor</div>
+      <div class="description">Crop boundingbox region of human in image</div>
+    </div>
+
+    <br/>
+
+    <div class="code-block">
+      <h1>Example</h1>
+      <pre>
+        <code class="language-python">
+          from vimos.editor import ResizeEditor, HumanCropEditor
+          from vimos.utils import Pipeline
+
+          image = ...
+          modifier = Pipeline([
+                ResizeEditor(256, 256), 
+                HumanCropEditor()
+          ])
+          
+          image = modifier(image)
+        </code>
+      </pre>
+    </div>
+
   </div>
+  
 </body>
 </html>
 

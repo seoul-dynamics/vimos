@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/atom-one-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>>
+<script>hljs.highlightAll();</script>
+<title>Task</title>
+<link rel="stylesheet" href="Api.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Task</h1>
+    <h2>Task</h2>
+
+    <div class="function">
+      <div class="name">SimilarityRankingTask</div>
+      <div class="description">Rank the similarity of reference images along the input image</div>
+    </div>
+
+    <div class="function">
+      <div class="name">PoseMatchingTask</div>
+      <div class="description">Determine if the input image matches with the reference image</div>
+    </div>
+
+    <br/>
+    
+    <div class="code-block">
+    <h1>Example</h1>
+
+    <pre><code  class="language-python">
+    from vimos.task import SimilarityRankingTask
+
+    # Example task setting
+    task_config = TaskConfig(
+        model=model,
+        editor=editor,
+        modifier=modifier,
+        metric="euclidean",
+    )
+    task = SimilarityRankingTask(
+        task_config,
+        reference=reference,
+        similar_front=True,
+    )
+    task.start()
+    
+    # Example usage
+    output, score, updated = task.process(Photo(frame))
+</code>
+    </pre>
+    </div>
+
+  </div>
+</body>
+</html>
+

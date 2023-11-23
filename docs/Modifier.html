@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/atom-one-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script> 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Modifier</title>
@@ -8,7 +11,7 @@
 </head>
 <body>
   <div class="container">
-    <h1>Container</h1>
+    <h1>Modifier</h1>
     </div>
     <div class="container">
     <h2>Pose</h2>
@@ -16,6 +19,10 @@
     <div class="function">
       <div class="name">SelectModifier</div>
       <div class="description">Extract selected keypoints from skeleton</div>
+    </div>
+    <div class="function">
+      <div class="name">WeightModifier</div>
+      <div class="description">Give weight to skeleton landmarks</div>
     </div>
   </div>
     
@@ -26,7 +33,29 @@
       <div class="name">SegmentModifier</div>
       <div class="description">Extract selected part of the mesh</div>
     </div>
+
+    <br/>
+
+    <div class="code-block">
+      <h1>Example</h1>
+      <pre>
+        <code class="language-python">
+          from vimos.modifier import SelectModifier, WeightModifier
+          from vimos.utils import Pipeline
+
+          skeleton = ...
+          modifier = Pipeline([
+              SelectModifier(["l_shoulder", "r_shoulder", "l_elbow", "r_elbow", "l_wrist", "r_wrist"]), 
+              WeightModifier({"l_shoulder": 1, "r_shoulder": 1, "l_elbow": 2, "r_elbow": 2, "l_wrist": 4, "r_wrist": 4})
+          ])
+          
+          skeleton = modifier(skeleton)
+        </code>
+      </pre>
+    </div>
+
   </div>
+  
 </body>
 </html>
 

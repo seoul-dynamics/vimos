@@ -5,6 +5,16 @@ html, body {
   overflow-x: hidden; /* Prevents any scrolling caused by overflow */
 }
 
+#header {
+  background-color: #ffffff;
+}
+
+#front-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 columns, each with 1 fraction of the available space */
@@ -83,3 +93,4 @@ html, body {
   width : 100%;
   font-size: 18px
 }
+

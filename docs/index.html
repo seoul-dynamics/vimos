@@ -5,48 +5,51 @@
   <link rel="stylesheet" href="front_page.css">
 <style>
 /* Add some basic styling to the menu bar */
-ul.menu {
+#header {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+
+  background-color: white;
 }
 
 /* Style the menu items */
-ul.menu li {
+#header li {
   float: left;
 }
 
 /* Style the links */
-ul.menu li a {
+#header li a {
   display: block;
-  color: white;
+  color: #3e3e3e;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
 }
 
-.header-image {
-  display: block;
-  height: auto;
-  width: 100%;
-}
-
 /* Change the link color to #111 (darker gray) on hover */
-ul.menu li a:hover {
+#header li a:hover {
   background-color: #111;
 }
 </style>
 </head>
 <body>
-<img class="header-image" src="image/head.png" alt="Smiley face" height="42" width="42">
-<ul class="menu">
+
+<ul id="header">
+  <li style="width: 190px; height: 20px">
+    <a href="index.html">
+      <img src="image/logo.png" alt="Logo" width="30px" height="30px">
+      <span style="color:#687eff; font-size: larger; text-align: center;">Vimos</span>
+      <span style="color: black; font-size: larger;">Engine</span>
+    </a>
+  </li>
   <li><a href="https://github.com/seoul-dynamics/vimos/blob/main/docs/install.md">Install</a></li>
   <li><a href="#news">User Guide</a></li>
   <li><a href="#contact">Examples</a></li>
   <li><a href="#about">More</a></li>
 </ul>
+<img id="front-image" src="image/front.png" alt="Front Image" width="100%" height="100px">
 
 <div class="grid-container">
     <!-- Row 1 -->

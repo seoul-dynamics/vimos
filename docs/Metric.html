@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/atom-one-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<title>Metric</title>
+<link rel="stylesheet" href="Api.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Metric</h1>
+    <h2>Metric</h2>
+
+    <div class="function">
+      <div class="name">EuclideanMetric</div>
+      <div class="description">Euclidean distance of two skeletons after applying procrutes transform</div>
+    </div>
+
+    <br/>
+    
+    <div class="code-block">
+        <h1>Example</h1>
+    <pre><code  class="language-python">
+    from vimos.metric import build_metric, EuclideanMetric
+
+    user_skeleton = ...
+    reference_skeleton = ...
+
+    metric = EuclideanMetric()
+    # or metric = build_metric("euclidean")
+    score = metric(user_skeleton, reference_skeleton)
+</code>
+    </pre>
+    </div>
+
+  </div>
+</body>
+</html>
+
