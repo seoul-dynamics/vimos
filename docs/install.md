@@ -1,7 +1,7 @@
 # Installation
 Pose
 
-Follow instruction from MMPose.
+Follow instruction from [MMPose](https://mmpose.readthedocs.io/en/latest/installation.html).
 
 Mesh
 1. Install required modules from FrankMocap
