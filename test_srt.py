@@ -55,10 +55,10 @@ if __name__ == "__main__":
     # 1. Container 정의 (레퍼런스 이미지)
     reference_container = Album(
         [
-            "sample/pingpong/pose1.jpg",
-            "sample/pingpong/pose2.jpg",
-            "sample/pingpong/pose3.jpg",
-            "sample/pingpong/pose4.jpg",
+            "sample/weight_training/pose1.jpg",
+            "sample/weight_training/pose2.jpg",
+            "sample/weight_training/pose3.jpg",
+            "sample/weight_training/pose4.jpg",
         ]
     )
 
