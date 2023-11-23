@@ -1,0 +1,85 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%; /* Make sure the body has no extra space */
+  overflow-x: hidden; /* Prevents any scrolling caused by overflow */
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns, each with 1 fraction of the available space */
+  width: 100%; /* The grid container takes the full width of the viewport */
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 60px;
+  padding-right: 60px;
+  box-sizing: border-box; /* The padding should be included in the width */
+  row-gap : 10px;
+  column-gap: 50px;
+}
+
+.grid-item {
+  background-color: #ffffff; /* Light grey background, visible behind the image */
+  border: 2px solid #000000; /* Grey border */
+  border-radius: 10px; /* Rounded corners */
+  overflow: hidden; /* Ensures the content respects the rounded corners */
+  display: flex; /* Use flexbox for centering the image */
+  justify-content: center; /* Center the image horizontally */
+  aspect-ratio: 3 / 4; /* Set the aspect ratio for the blocks */
+  flex-direction: column;
+  box-sizing: border-box; /* The padding should be included in the width */
+}
+
+.title, .content, .image-container, .button-container {
+  display: flex; 
+  flex: 0 1 auto;
+}
+
+
+.title { 
+  height: 10%; 
+  width: calc(100%-30px);
+  color: #84a2ff;
+  font-size: 40px;
+  text-align: left;
+  justify-content: left;
+  align-items: center;
+  background-color: #ffffff;
+  padding-left:15px;
+  padding-right: 15px;
+}
+.content { 
+  height: 20%; 
+  width : calc(100%-30px);
+  background-color: #ffffff ;
+  font-size : 18px;  
+  padding-left:15px;
+  padding-right: 15px;
+
+}
+.image-container { 
+  height: 63%; 
+  width: calc(100% - 30px);
+  padding-left:15px;
+  padding-right: 15px;/* 50% */ }
+
+.button-container { 
+  height: 7%; 
+  width : 100%
+}
+
+.image-container img {
+  width: calc(100% - 30px); /* Full width of the grid cell */
+  height: 100%;
+  object-fit: contain; /* Ensures the image is not cropped */
+}
+
+.button-container button {
+  border: none;
+  border-radius: 5px; /* Slightly rounded corners for the button */
+  background-color: #687eff; /* Example button color */
+  color: white;
+  cursor: pointer;
+  width : 100%;
+  font-size: 18px
+}

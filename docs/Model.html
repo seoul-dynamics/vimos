@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Model</title>
+<link rel="stylesheet" href="Api.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Models</h1>
+    <h2>Definition</h2>
+
+    <div class="function">
+      <div class="name">connect(self, queue_in, queue_out)</div>
+      <div class="description">Connect input stream and output stream to model for multi-processing</div>
+    </div>
+
+    <div class="function">
+      <div class="name">run(self)</div>
+      <div class="description">Run model in multi-processing mode</div>
+    </div>
+
+    <div class="function">
+        <div class="name">process(self, input_data: Container)</div>
+        <div class="description">Process the given input(Images, Album) through the model and return the output.</div>
+      </div>
+
+    <!-- Repeat the structure above for each function -->
+    
+  </div>
+  <div class="container">
+    <h1>SubModules</h1>
+    <h2>Definition</h2>
+
+    <div class="function">
+      <div class="name">Pose</div>
+      <div class="description">Model that finds Skeletons(COCO Format) from input</div>
+    </div>
+
+    <div class="function">
+      <div class="name">Mesh</div>
+      <div class="description">Model that finds Meshes from input</div>
+    </div>
+  </div>
+</body>
+</html>

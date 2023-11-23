@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="front_page.css">
+<style>
+/* Add some basic styling to the menu bar */
+ul.menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the menu items */
+ul.menu li {
+  float: left;
+}
+
+/* Style the links */
+ul.menu li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.header-image {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+/* Change the link color to #111 (darker gray) on hover */
+ul.menu li a:hover {
+  background-color: #111;
+}
+</style>
+</head>
+<body>
+<img class="header-image" src="image/head.png" alt="Smiley face" height="42" width="42">
+<ul class="menu">
+  <li><a href="https://github.com/seoul-dynamics/vimos/blob/main/docs/install.md">Install</a></li>
+  <li><a href="#news">User Guide</a></li>
+  <li><a href="#contact">Examples</a></li>
+  <li><a href="#about">More</a></li>
+</ul>
+
+<div class="grid-container">
+    <!-- Row 1 -->
+    <div class="grid-item">
+      <div class="title">Container</div>
+      <div class="content">Provides standardized interface for managing and processing human images</div>
+      <div class="image-container">
+        <img src="image/1.png" alt="Fuck alt">
+      </div>
+      <div class="button-container">
+        <button onclick="location.href='Container.html';">Examples</button>
+      </div>
+    </div>
+    <div class="grid-item">
+      <div class="title">Editor</div>
+      <div class="content">Streamlines image pre-processing for Model with a customizable, reusable pipeline, enabling efficient image preparation</div>
+      <div class="image-container">
+        <img src="image/2.png" alt="Fuck alt">
+      </div>
+      <div class="button-container">
+        <button onclick="location.href='Editor.html';">Examples</button>
+      </div>
+    </div>
+    <div class="grid-item">
+      <div class="title">Modifier</div>
+      <div class="content">Provides standardized interface for post-processing before used in Task, transforming the data while maintaing its type</div>
+      <div class="image-container">
+        <img src="image/3.png" alt="Fuck alt">
+      </div>
+      <div class="button-container">
+        <button onclick="location.href='Modifier.html';">Examples</button>
+      </div>
+    </div>
+    <div class="grid-item">
+      <div class="title">Model</div>
+      <div class="content">Uses MMPose to extract pose skeletons and FrankMocap to create 3D Meshes, enabling customization and integration into the Task Module</div>
+      <div class="image-container">
+        <img src="image/4.png" alt="Fuck alt">
+      </div>
+      <div class="button-container">
+       <button onclick="location.href='Model.html';"> Examples </button>
+      </div>
+    </div>
+    <div class="grid-item">
+      <div class="title">Task</div>
+      <div class="content">Uses Model outputs for practical application, simplifying the use of complex algorithms without the need for User development</div>
+      <div class="image-container">
+        <img src="image/5.png" alt="Fuck alt">
+      </div>
+      <div class="button-container">
+        <button onclick="location.href='Task.html';">Examples</button>
+      </div>
+    </div>
+    <div class="grid-item">
+      <div class="title">Metric</div>
+      <div class="content">Evaluates the resemblance between different pose skeletons</div>
+      <div class="image-container">
+        <img src="image/6.png" alt="Fuck alt">
+      </div>
+      <div class="button-container">
+        <button onclick="location.href='Metric.html';">Examples</button>
+      </div>
+    </div>
+</div>
+
+</body>
+</html>
