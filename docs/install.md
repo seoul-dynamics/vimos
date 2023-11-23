@@ -6,12 +6,12 @@ Follow instruction from MMPose.
 Mesh
 1. Install required modules from FrankMocap
 
-'''shell
+```shell
 pip install chumpy
 pip install scipy
 pip install smplx
 pip install opencv-python
-'''
+```
 
 2. Setting SMPL Models.
 - Setting SMPL/SMPL-X Models
@@ -21,6 +21,6 @@ pip install opencv-python
         - Put the file in: ./extra_data/smpl/basicModel_neutral_lbs_10_207_0_v1.0.0.pkl
 
 3. Download Models
-'''shell
+```shell
 sh scripts/download_models.sh
-'''
+```
