@@ -17,6 +17,5 @@ class HumanCropEditor(Editor):
     def _process(self, image):
         data = image.data
         data = inference_detector(self.model, data)
-        print(data)
         image.data = data
         return image
