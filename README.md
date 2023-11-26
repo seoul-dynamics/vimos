@@ -8,6 +8,9 @@
 <p align="center">
     <img src="docs/image/readme//logo.png" width="70%" />
 </p>
+<p align="center">
+ <a href="https://seoul-dynamics.github.io/vimos/">API Docs</a>
+</p>
 
 <br/><br/>
 
@@ -96,7 +99,7 @@ The Vimos engine is organized into five sub-modules. Each module functions seque
 |Modifier|Scalable abstraction of the pipeline that post-processes the output from the models, either a pose skeleton or a 3D mesh.|
 |Task|Provide basic tasks that are redundantly used by multiple services in the form of classes so that users can use them without having to develop their own algorithms.|
 
-For further details, check the [API docs](https://seoul-dynamics.github.io/vimos/).
+For further details, check the [API Docs](https://seoul-dynamics.github.io/vimos/).
 
 <br/><br/>
 
